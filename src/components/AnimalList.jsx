@@ -1,4 +1,4 @@
-import React, { useCallback } from "react";
+import React, { useCallback, useEffect } from "react";
 import { useAnimalContext } from "../helpers/AnimalContext";
 import { useAnimalPriceContext } from "../helpers/context/AnimalPriceContext";
 import TradeButton from "./TradeButton";
@@ -12,6 +12,10 @@ const AnimalList = () => {
     name: "no-name",
     dmg: 0.212121213,
   };
+
+  // useEffect(() => {
+  //   console.log(animalList.length);
+  // }, [animalList]);
 
   // const _remove = useCallback((value) => {
   //   remove(value);
