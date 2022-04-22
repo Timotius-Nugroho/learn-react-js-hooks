@@ -9,7 +9,7 @@ const AnimalList = () => {
   const { AnimalPriceState, increment, decrement, remove } =
     useAnimalPriceContext();
   const mockData = {
-    name: "no-name",
+    name: "no-names",
     dmg: 0.212121213,
   };
 

@@ -6,6 +6,8 @@ import { AnimalProvider } from "./helpers/AnimalContext";
 import { AnimalPriceProvider } from "./helpers/context/AnimalPriceContext";
 import UserListComponent from "./components/UserListComponent";
 import CountButton from "./components/CountButton";
+import AnimationEx from "./components/Animation";
+import SideNav from "./components/SideNav";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -30,47 +32,57 @@ function App() {
   );
 
   return (
-    <div>
-      {statusText ? <p>{statusText}</p> : <p>Loading...</p>}
-      <p>You clicked {count} times</p>
-      <CountButton onclick={_setCount} />
-      <input
-        placeholder="write down here..."
-        value={text}
-        onChange={(event) => {
-          setText(event.target.value);
-        }}
-      ></input>
-      <br />
-      <ol>
-        {listUsers.map((e, i) => {
-          return <UserListComponent key={i} name={e.name} id={e.id} />;
-        })}
-      </ol>
-      <br />
-      <button
-        style={{ color: "red" }}
-        onClick={() => {
-          addUsers({ name: "New User", id: 23 });
-        }}
-      >
-        Add Users
-      </button>
-      <button
-        style={{ color: "blue" }}
-        onClick={() => {
-          cleanUplist();
-        }}
-      >
-        Clean Up list
-      </button>
-      <br />
-      <br />
-      <AnimalProvider>
-        <AnimalPriceProvider>
-          <AnimalList />
-        </AnimalPriceProvider>
-      </AnimalProvider>
+    <div className="flex">
+      <div>
+        <SideNav />
+      </div>
+      <div className="px-5">
+        {statusText ? <p>{statusText}</p> : <p>Loading...</p>}
+        <p>You clicked {count} times</p>
+        <CountButton onclick={_setCount} />
+        <input
+          placeholder="write down here..."
+          value={text}
+          onChange={(event) => {
+            setText(event.target.value);
+          }}
+        ></input>
+        <br />
+        <ol>
+          {listUsers.map((e, i) => {
+            return <UserListComponent key={i} name={e.name} id={e.id} />;
+          })}
+        </ol>
+        <br />
+        <button
+          style={{ color: "red" }}
+          onClick={() => {
+            addUsers({ name: "New User", id: 23 });
+          }}
+        >
+          Add Users
+        </button>
+        <button
+          style={{ color: "blue" }}
+          onClick={() => {
+            cleanUplist();
+          }}
+        >
+          Clean Up list
+        </button>
+        <br />
+        <br />
+        <AnimalProvider>
+          <AnimalPriceProvider>
+            <AnimalList />
+          </AnimalPriceProvider>
+        </AnimalProvider>
+        <br />
+        <br />
+        <AnimationEx />
+        <br />
+        <br />
+      </div>
     </div>
   );
 }
