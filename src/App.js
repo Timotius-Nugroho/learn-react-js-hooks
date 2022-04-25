@@ -8,6 +8,8 @@ import UserListComponent from "./components/UserListComponent";
 import CountButton from "./components/CountButton";
 import AnimationEx from "./components/Animation";
 import SideNav from "./components/SideNav";
+import RitchTextEditor from "./components/RitchTextEditor";
+import DraftJsEditor from "./components/DraftJsEditor";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -80,6 +82,12 @@ function App() {
         <br />
         <br />
         <AnimationEx />
+        <br />
+        <br />
+        {/* <RitchTextEditor /> */}
+        <br />
+        <br />
+        <DraftJsEditor />
         <br />
         <br />
       </div>
