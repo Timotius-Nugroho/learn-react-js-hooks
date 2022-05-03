@@ -10,6 +10,7 @@ import AnimationEx from "./components/Animation";
 import SideNav from "./components/SideNav";
 import RitchTextEditor from "./components/RitchTextEditor";
 import DraftJsEditor from "./components/DraftJsEditor";
+import BitCustomButton from "./components/BitCustomButton/index";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -90,6 +91,7 @@ function App() {
         <DraftJsEditor />
         <br />
         <br />
+        <BitCustomButton />
       </div>
     </div>
   );
